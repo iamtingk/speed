@@ -6,7 +6,6 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mtntech.android.lib.support.activity.TBaseActivity;
 import com.test.tingk.tingkproject.R;
 import com.test.tingk.tingkproject.config.AppConfig;
 import com.test.tingk.tingkproject.data.DataHolder;
@@ -23,7 +22,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-public class LaunchActivity extends TBaseActivity {
+public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActivity {
     private SPHelper spHelper;
 
     @Override

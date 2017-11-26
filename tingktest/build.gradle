@@ -25,11 +25,11 @@ android {
         }
     }
 
-    // 這是添加的
-    lintOptions{
+    // 添加
+    lintOptions {
         abortOnError false
-        checkReleaseBuilds false
     }
+
 }
 
 dependencies {
@@ -45,9 +45,9 @@ dependencies {
 
 
 
-def siteUrl = 'https://github.com/ray00178/RayZhangAlbum.git'      // 項目的主頁
-def gitUrl = 'https://github.com/ray00178/RayZhangAlbum.git'       // Git倉庫的url
-group = "com.rayzhang.android"         // Maven Group ID for the artifact，一般填你唯一的包名
+def siteUrl = 'https://github.com/iamtingk/speed.git'      // 項目的主頁
+def gitUrl = 'https://github.com/iamtingk/speed.git'       // Git倉庫的url
+group = "com.test.tingk.tingktest"         // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -104,7 +104,7 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
             configurations = ['archives']
             pkg {
                 repo = "maven"      // 這邊是對應jCenter的倉庫名稱
-                name = "rzalbum"    // 發佈到jCenter上的項目名稱
+                name = "tingktest"    // 發佈到jCenter上的項目名稱
                 websiteUrl = siteUrl
                 vcsUrl = gitUrl
                 licenses = ["Apache-2.0"]

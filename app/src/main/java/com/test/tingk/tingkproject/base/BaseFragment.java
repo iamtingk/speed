@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
-import com.mtntech.android.lib.support.activity.TBaseActivity;
+
+import com.test.tingk.tingktest.activity.TBaseActivity;
 
 import java.lang.reflect.Array;
 import java.util.Collection;

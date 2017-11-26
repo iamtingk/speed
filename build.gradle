@@ -18,6 +18,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
 
     // jCenter; 加上這些為了防止編碼失敗

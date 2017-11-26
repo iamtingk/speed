@@ -4,11 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.mtntech.android.lib.support.util.network.HttpConnector;
 import com.test.tingk.tingkproject.config.AppConfig;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import com.test.tingk.tingktest.util.network.HttpConnector;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,7 +28,7 @@ public class FileHelper {
                     //訪問API json
                     Log.e("下載","過程-1");
                     String jsonURL = "http://od.moi.gov.tw/api/v1/rest/datastore/A01010000C-000674-011";
-                    JSONParser jsonParser = new JSONParser();
+//                    JSONParser jsonParser = new JSONParser();
 //                    JSONObject jsonObject = (JSONObject) jsonParser.parse(connector.doGet(jsonURL));
                     StringBuilder stringBuilder = new StringBuilder();
 //                    stringBuilder.append((jsonObject));

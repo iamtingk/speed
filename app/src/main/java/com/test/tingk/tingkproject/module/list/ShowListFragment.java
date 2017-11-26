@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +21,6 @@ import com.test.tingk.tingkproject.data.adapter.SpinnerAdapter;
 import com.test.tingk.tingkproject.data.model.AreaModel;
 import com.test.tingk.tingkproject.data.model.CityModel;
 import com.test.tingk.tingkproject.data.model.RecordModel;
-import com.test.tingk.tingkproject.data.model.ResponseModel;
-import com.test.tingk.tingkproject.data.model.ResultModel;
-import com.test.tingk.tingkproject.helper.SPHelper;
 import com.test.tingk.tingkproject.util.ItemOffsetDecoration;
 
 import java.util.ArrayList;

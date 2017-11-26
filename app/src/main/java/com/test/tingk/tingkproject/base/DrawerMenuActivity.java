@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.mtntech.android.lib.support.activity.TDrawerMenuActivity;
 import com.test.tingk.tingkproject.R;
 import com.test.tingk.tingkproject.data.adapter.MenuListAdapter;
 import com.test.tingk.tingkproject.module.about.AboutFragment;
@@ -15,7 +14,7 @@ import com.test.tingk.tingkproject.module.list.ShowListFragment;
 import com.test.tingk.tingkproject.module.map.ShowMapFragment;
 import com.test.tingk.tingkproject.module.set.SettingFragment;
 
-public class DrawerMenuActivity extends TDrawerMenuActivity {
+public class DrawerMenuActivity extends com.test.tingk.tingktest.activity.TDrawerMenuActivity {
     private MenuListAdapter adapter;
     private String[] defaultMenuItems;
 
