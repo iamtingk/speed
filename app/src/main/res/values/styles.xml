@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorSpeedLightSkyBlue</item>
+        <item name="colorPrimaryDark">@color/colorSpeedDarkSkyBlue</item>
+        <item name="colorAccent">@color/colorSpeedOrange</item>
+    </style>
+
+    <style name="FullTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/colorSpeedGreen</item>
+    </style>
+
+
+
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Spinner
+        android:id="@+id/spinner_city"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spinner_area"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite">
+    </Spinner>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_showlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp"
+        android:background="@color/colorSpeedGray">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

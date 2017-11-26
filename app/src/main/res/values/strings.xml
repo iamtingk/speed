@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TingkProject</string>
+    <string-array name="drawer_menu">
+        <item>列表顯示</item>
+        <item>地圖顯示</item>
+        <item>關於測速</item>
+        <item>設定</item>
+    </string-array>
+</resources>

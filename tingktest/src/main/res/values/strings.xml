@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TingkTest</string>
+    <string name="drawer_menu_open">Open navigation drawer</string>
+    <string name="drawer_menu_close">Close navigation drawer</string>
+</resources>
