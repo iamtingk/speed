@@ -146,9 +146,16 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
                             record_select_items.add(record_items.get(i));
                         }
                     }
+
+                    // 備註
+                    // areadata.get(0).CityName -> 臺北市
+                    // getAreaList()[1] -> 大同區，當前在大同區
+                    // areadata.get(0).getAreaList()[position])
+
                 }
 
 
+                //根據暫存資料，增加Marker並移動到第一個Marker
                 for (int i = 0; i < record_select_items.size(); i++) {
                     gMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(record_select_items.get(i).getLatitude()), Double.valueOf(record_select_items.get(i).getLongitude()))).title("測速：" + record_select_items.get(i).getLimit())).showInfoWindow();
                 }

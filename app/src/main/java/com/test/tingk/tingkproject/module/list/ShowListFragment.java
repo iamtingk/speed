@@ -130,8 +130,7 @@ public class ShowListFragment extends BaseFragment {
         spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                // 格式化
-                record_select_items = new ArrayList<RecordModel>();
+                record_select_items = new ArrayList<RecordModel>();// 格式化
 
                 // 比對 - 所有測速開放資料的縣市 比對 spinnerCity所選的縣市
                 // 比對 - 所有測速開放資料的地區 比對 spinnerCity所選的地區

@@ -3,8 +3,7 @@
     <string-array name="drawer_menu">
         <item>列表顯示</item>
         <item>地圖顯示</item>
-        <item>關於測速</item>
-        <item>設定</item>
+        <item>關於</item>
     </string-array>
 
     <string name="no_network">無網路！</string>
