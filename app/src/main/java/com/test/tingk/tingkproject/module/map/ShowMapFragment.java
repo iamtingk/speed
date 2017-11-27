@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -159,7 +160,12 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
                 for (int i = 0; i < record_select_items.size(); i++) {
                     gMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(record_select_items.get(i).getLatitude()), Double.valueOf(record_select_items.get(i).getLongitude()))).title("測速：" + record_select_items.get(i).getLimit())).showInfoWindow();
                 }
-                gMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Double.valueOf(record_select_items.get(0).getLatitude()), Double.valueOf(record_select_items.get(0).getLongitude()))));
+                if (!isEmpty(record_select_items)){
+                    gMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Double.valueOf(record_select_items.get(0).getLatitude()), Double.valueOf(record_select_items.get(0).getLongitude()))));
+                }else {
+                    Toast.makeText(baseActivity, "無測速照相!", Toast.LENGTH_SHORT).show();
+                }
+
 
 
             }
