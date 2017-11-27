@@ -12,7 +12,6 @@ import com.test.tingk.tingkproject.data.adapter.MenuListAdapter;
 import com.test.tingk.tingkproject.module.about.AboutFragment;
 import com.test.tingk.tingkproject.module.list.ShowListFragment;
 import com.test.tingk.tingkproject.module.map.ShowMapFragment;
-import com.test.tingk.tingkproject.module.set.SettingFragment;
 
 public class DrawerMenuActivity extends com.test.tingk.tingktest.activity.TDrawerMenuActivity {
     private MenuListAdapter adapter;
@@ -93,11 +92,6 @@ public class DrawerMenuActivity extends com.test.tingk.tingktest.activity.TDrawe
             case 2: {
                 // 顯示關於測速
                 fragmentName = AboutFragment.class.getName();
-                break;
-            }
-            case 3: {
-                // 顯示設定
-                fragmentName = SettingFragment.class.getName();
                 break;
             }
         }

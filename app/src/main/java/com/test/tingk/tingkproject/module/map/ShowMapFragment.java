@@ -177,7 +177,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
         gMap = googleMap;
 
         gMap.getUiSettings().setZoomControlsEnabled(true);  // 右下角的放大縮小功能
-        gMap.animateCamera(CameraUpdateFactory.zoomTo(13)); // 放大地圖到 13 倍大
+        gMap.animateCamera(CameraUpdateFactory.zoomTo(14)); // 放大地圖到 14 倍大
 
 
     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TingkProject</string>
+    <string name="app_name">測速照相分佈</string>
     <string-array name="drawer_menu">
         <item>列表顯示</item>
         <item>地圖顯示</item>

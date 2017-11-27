@@ -60,7 +60,7 @@ public class MenuListAdapter extends BaseAdapter {
         MenuItemHolder holder;
         if (convertView == null)
         {
-            convertView = inflater.inflate(R.layout.item_menu, null);
+            convertView = inflater.inflate(R.layout.menu_item, null);
             holder = new MenuItemHolder();
             holder.title = (TextView) convertView.findViewById(R.id.text_title);
         }
