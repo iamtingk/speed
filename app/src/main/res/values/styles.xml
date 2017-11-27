@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorSpeedOrange</item>
     </style>
 
-    <style name="FullTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="FullTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@color/colorBlack</item>
     </style>
