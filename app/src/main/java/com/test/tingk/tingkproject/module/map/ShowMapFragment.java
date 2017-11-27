@@ -174,8 +174,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
 
         gMap.getUiSettings().setZoomControlsEnabled(true);  // 右下角的放大縮小功能
         gMap.getUiSettings().setCompassEnabled(true);       // 左上角的指南針，要兩指旋轉才會出現
-//        gMap.getUiSettings().setMapToolbarEnabled(true);    // 右下角的導覽及開啟 Google Map功能
-        gMap.animateCamera(CameraUpdateFactory.zoomTo(16));     // 放大地圖到 16 倍大
+        gMap.animateCamera(CameraUpdateFactory.zoomTo(13));     // 放大地圖到 16 倍大
 
 
     }

@@ -10,7 +10,7 @@
 
     <style name="FullTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/colorSpeedGreen</item>
+        <item name="android:windowBackground">@color/colorBlack</item>
     </style>
 
 
