@@ -70,7 +70,8 @@ public class ShowListFragment extends BaseFragment {
         ItemOffsetDecoration itemDecoration =
                 new ItemOffsetDecoration(getContext(), R.dimen.grid_item_offset);
         recyclerView.addItemDecoration(itemDecoration);
-        getActivity().setTitle("顯示列表");
+
+        getActivity().setTitle(R.string.show_list);
 
 
 
@@ -143,7 +144,8 @@ public class ShowListFragment extends BaseFragment {
                     }
 
                     // 備註
-                    // 0 -> 台北市，getAreaList()[1] -> 大同區，當前在大同區
+                    // areadata.get(0).CityName -> 臺北市
+                    // getAreaList()[1] -> 大同區，當前在大同區
                     // areadata.get(0).getAreaList()[position])
 
                 }

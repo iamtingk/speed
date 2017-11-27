@@ -16,16 +16,19 @@ public class SPHelper {
     private SharedPreferences.Editor editor;
 
 
+    //建構
     public SPHelper(Context context){
         sp = context.getSharedPreferences(AppConfig.SP_DATA, Context.MODE_PRIVATE);
         editor = sp.edit();
     }
 
+    //Data輸入到SP
     public void editSP(String SPName,String data){
         editor.putString(SPName,data);
         editor.commit();
     }
 
+    //輸出SP的Data
     public String readSP(String SPName, @Nullable String defValue){
         return  sp.getString(SPName,defValue);
 

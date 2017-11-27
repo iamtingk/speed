@@ -34,17 +34,15 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
-        txtStatus = (TextView)findViewById(R.id.txt_status);
+        txtStatus = (TextView) findViewById(R.id.txt_status);
         spHelper = new SPHelper(this);
 
-
-
+        // 檢查網路
         if (HttpConnector.isNetworkAvailable(this)) {
-            new TransTask().execute(AppConfig.JSON_URL);
-        }else {
-
-            txtStatus.setText(R.string.no_network);
-            setSleep2(5000);
+            new TransTask().execute(AppConfig.JSON_URL); // 執行非同步任務
+        } else {
+            txtStatus.setText(R.string.no_network); // 狀態
+            setSleepAndEnd(5000);
         }
 
     }
@@ -81,10 +79,11 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
+            //輸出到SharedPreference
             spHelper.editSP(AppConfig.JSON_SP_NAME, s);
             Log.e("readSP", spHelper.readSP(AppConfig.JSON_SP_NAME, ""));
 
-            DataHolder.getInstance().setData(AppConfig.DATA_KEY,getRecordData());
+            DataHolder.getInstance().setData(AppConfig.DATA_KEY, getRecordData());
             goContainerPage(DrawerMenuActivity.class, ShowListFragment.class.getName(), null, true, PAGE_DEFAULT_ANIMATION);
 
         }
@@ -93,7 +92,7 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
 
     private List<RecordModel> getRecordData() {
         //解析開始
-        SPHelper spHelper = new SPHelper(getApplicationContext());
+        SPHelper spHelper = new SPHelper(this);
         Gson gson = new GsonBuilder().create();
         String json = spHelper.readSP(AppConfig.JSON_SP_NAME, "");
         ResponseModel responseModel = gson.fromJson(json, ResponseModel.class);
@@ -109,21 +108,23 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
     }
 
 
-    private void setSleep(long millis){
+    // Sleep
+    private void setSleep(long millis) {
         try {
             Thread.sleep(millis);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    private void setSleep2(long millis){
+    // Sleep後關閉程式
+    private void setSleepAndEnd(long millis) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 LaunchActivity.this.finish();
             }
-        },millis);
+        }, millis);
     }
 
 

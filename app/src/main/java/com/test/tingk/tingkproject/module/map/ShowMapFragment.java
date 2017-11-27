@@ -78,7 +78,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        getActivity().setTitle("顯示地圖");
+        getActivity().setTitle(R.string.show_map);
 
     }
 
@@ -92,7 +92,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
 
         // 全部地區
         Gson gson = new GsonBuilder().create();
-        CityModel cityData = gson.fromJson(AppConfig.JSON_TW,CityModel.class);
+        CityModel cityData = gson.fromJson(AppConfig.JSON_TW, CityModel.class);
         areadata = cityData.getALLCity();
 
         // 顯示縣市 -> spinnerCity
@@ -112,7 +112,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
                 // 比對 - 選擇的spinnerCity的縣市 比對 全部地區內的縣市
                 // 獲取 - 該縣市的所有地區
                 for (int i = 0; i < areadata.size(); i++) {
-                    if (cityArray[position].equals(areadata.get(i).getCityName())){
+                    if (cityArray[position].equals(areadata.get(i).getCityName())) {
                         // 顯示該縣市的所有地區 -> spinnerArea
                         spinnerAreaAdapter = new SpinnerAdapter(baseActivity, areadata.get(i).getAreaList(), "地區選擇：");
                         spinnerArea.setAdapter(spinnerAreaAdapter);
@@ -129,13 +129,11 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
         });
 
 
-
-
         spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                // 格式化
-                record_select_items = new ArrayList<RecordModel>();
+
+                record_select_items = new ArrayList<RecordModel>(); // 格式化
                 gMap.clear(); // 清除已增加的Marker
 
 
@@ -152,10 +150,9 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
 
 
                 for (int i = 0; i < record_select_items.size(); i++) {
-                    gMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(record_select_items.get(i).getLatitude()), Double.valueOf(record_select_items.get(i).getLongitude()))).title("測速："+record_select_items.get(i).getLimit())).showInfoWindow();
+                    gMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(record_select_items.get(i).getLatitude()), Double.valueOf(record_select_items.get(i).getLongitude()))).title("測速：" + record_select_items.get(i).getLimit())).showInfoWindow();
                 }
                 gMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Double.valueOf(record_select_items.get(0).getLatitude()), Double.valueOf(record_select_items.get(0).getLongitude()))));
-
 
 
             }
@@ -173,8 +170,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
         gMap = googleMap;
 
         gMap.getUiSettings().setZoomControlsEnabled(true);  // 右下角的放大縮小功能
-        gMap.getUiSettings().setCompassEnabled(true);       // 左上角的指南針，要兩指旋轉才會出現
-        gMap.animateCamera(CameraUpdateFactory.zoomTo(13));     // 放大地圖到 16 倍大
+        gMap.animateCamera(CameraUpdateFactory.zoomTo(13)); // 放大地圖到 13 倍大
 
 
     }
