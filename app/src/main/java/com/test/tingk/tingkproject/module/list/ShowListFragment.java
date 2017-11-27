@@ -79,7 +79,7 @@ public class ShowListFragment extends BaseFragment {
     @Override
     protected void initParam() {
         // 測速開放資料
-        record_items = DataHolder.getInstance().getData("record_items");
+        record_items = DataHolder.getInstance().getData(AppConfig.DATA_KEY);
 
         // 全部縣市
         cityArray = AppConfig.ARRAY_TW_CITY;

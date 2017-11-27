@@ -9,7 +9,8 @@ public class AppConfig {
     public static final String JSON_URL = "http://od.moi.gov.tw/api/v1/rest/datastore/A01010000C-000674-011";
     public static final String JSON_FILE_NAME = "json_speed";
     public static final String JSON_SP_NAME = "json_speed";
-    public static final String SP_DATA_1 = "sp_data_1";
+    public static final String SP_DATA = "sp_data";
+    public static final String DATA_KEY = "record_items";
 
 
     public static final String[] ARRAY_TW_CITY = {"臺北市", "新北市", "桃園市", "臺中市", "臺南市", "高雄市", "基隆市", "新竹市", "嘉義市", "新竹縣", "苗栗縣", "彰化縣", "南投縣", "雲林縣", "嘉義縣", "屏東縣", "宜蘭縣", "花蓮縣", "臺東縣", "澎湖縣", "金門縣", "連江縣"};

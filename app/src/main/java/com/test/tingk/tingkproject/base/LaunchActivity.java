@@ -2,8 +2,10 @@ package com.test.tingk.tingkproject.base;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,6 +17,7 @@ import com.test.tingk.tingkproject.data.model.ResponseModel;
 import com.test.tingk.tingkproject.data.model.ResultModel;
 import com.test.tingk.tingkproject.helper.SPHelper;
 import com.test.tingk.tingkproject.module.list.ShowListFragment;
+import com.test.tingk.tingktest.util.network.HttpConnector;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,15 +35,24 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
         txtStatus = (TextView)findViewById(R.id.txt_status);
-        spHelper = new SPHelper(getApplicationContext());
+        spHelper = new SPHelper(this);
 
-        new TransTask().execute(AppConfig.JSON_URL);
+
+
+        if (HttpConnector.isNetworkAvailable(this)) {
+            new TransTask().execute(AppConfig.JSON_URL);
+        }else {
+
+            txtStatus.setText(R.string.no_network);
+            setSleep2(5000);
+        }
+
     }
 
     class TransTask extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
-            txtStatus.setText("下載資料中...");
+            txtStatus.setText(R.string.downloading); // 狀態
             super.onPreExecute();
         }
 
@@ -72,7 +84,7 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
             spHelper.editSP(AppConfig.JSON_SP_NAME, s);
             Log.e("readSP", spHelper.readSP(AppConfig.JSON_SP_NAME, ""));
 
-            DataHolder.getInstance().setData("record_items",getRecordData());
+            DataHolder.getInstance().setData(AppConfig.DATA_KEY,getRecordData());
             goContainerPage(DrawerMenuActivity.class, ShowListFragment.class.getName(), null, true, PAGE_DEFAULT_ANIMATION);
 
         }
@@ -87,17 +99,31 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
         ResponseModel responseModel = gson.fromJson(json, ResponseModel.class);
         ResultModel resultModel = gson.fromJson(gson.toJson(responseModel.getResult()), ResultModel.class);
         List<RecordModel> list_items = resultModel.getRecords();
-        list_items.remove(0);//第一筆是測試資料，所以刪除
-        txtStatus.setText("完成...");
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        list_items.remove(0); // 第一筆是測試資料，所以刪除
+        txtStatus.setText(R.string.finish); // 狀態
+        setSleep(1000);
 
         //解析結束
         return list_items;
 
+    }
+
+
+    private void setSleep(long millis){
+        try {
+            Thread.sleep(millis);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void setSleep2(long millis){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                LaunchActivity.this.finish();
+            }
+        },millis);
     }
 
 

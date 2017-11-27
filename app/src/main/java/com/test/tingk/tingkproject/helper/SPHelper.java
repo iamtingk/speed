@@ -17,7 +17,7 @@ public class SPHelper {
 
 
     public SPHelper(Context context){
-        sp = context.getSharedPreferences(AppConfig.SP_DATA_1, Context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(AppConfig.SP_DATA, Context.MODE_PRIVATE);
         editor = sp.edit();
     }
 

@@ -6,4 +6,8 @@
         <item>關於測速</item>
         <item>設定</item>
     </string-array>
+
+    <string name="no_network">無網路!</string>
+    <string name="downloading">下載資料中...</string>
+    <string name="finish">完成...</string>
 </resources>
