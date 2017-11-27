@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -126,6 +125,7 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
             }
         }, millis);
     }
+
 
 
 }
