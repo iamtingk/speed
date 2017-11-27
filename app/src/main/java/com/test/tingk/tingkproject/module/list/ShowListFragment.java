@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +82,7 @@ public class ShowListFragment extends BaseFragment {
     protected void initParam() {
         // 測速開放資料
         record_items = DataHolder.getInstance().getData(AppConfig.DATA_KEY);
+
 
         // 全部縣市
         cityArray = AppConfig.ARRAY_TW_CITY;

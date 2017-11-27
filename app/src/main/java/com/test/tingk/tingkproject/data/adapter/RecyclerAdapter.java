@@ -2,6 +2,7 @@ package com.test.tingk.tingkproject.data.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +37,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ListVi
     @Override
     public void onBindViewHolder(ListViewHolder holder, int position) {
         RecordModel item = record_items.get(position);
-        holder.txtAddress.setText(item.getAddress());
-        holder.txtCity.setText(item.getCityName()+" - "+item.getRegionName());
-        holder.txtLimit.setText(item.getLimit());
-        holder.txtDirect.setText(item.getDirect());
-        holder.txtFromNm.setText(item.getDeptNm()+" - "+item.getBranchNm());
+        holder.txtCity.setText("地區：" + item.getCityName() + " - " + item.getRegionName());
+        holder.txtAddress.setText("位置：" + item.getAddress());
+        holder.txtDirect.setText("方向：" + item.getDirect());
+        holder.txtFromNm.setText("單位：" + item.getDeptNm() + " - " + item.getBranchNm());
+        holder.txtLimit.setText(resetLimit(item.getLimit()));
+
     }
 
     @Override
@@ -59,5 +61,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ListVi
             txtLimit = (TextView) itemView.findViewById(R.id.txt_limit);
             txtFromNm = (TextView) itemView.findViewById(R.id.txt_fromNm);
         }
+    }
+
+    // 限速數值異常，只取兩位數
+    // 異常：嘉義西區
+    private String resetLimit(String limit) {
+        String strLimit = limit;
+        if (limit.length() > 3) {
+            strLimit = limit.substring(0, 2);
+        }
+        return strLimit;
+
+
     }
 }
