@@ -75,7 +75,6 @@ public class ShowListFragment extends BaseFragment {
         getActivity().setTitle(R.string.show_list);
 
 
-
     }
 
     @Override
@@ -89,7 +88,7 @@ public class ShowListFragment extends BaseFragment {
 
         // 全部地區
         Gson gson = new GsonBuilder().create();
-        CityModel cityData = gson.fromJson(AppConfig.JSON_TW,CityModel.class);
+        CityModel cityData = gson.fromJson(AppConfig.JSON_TW, CityModel.class);
         areadata = cityData.getALLCity();
 
         // 顯示縣市 -> spinnerCity
@@ -110,7 +109,7 @@ public class ShowListFragment extends BaseFragment {
                 // 比對 - 選擇的spinnerCity的縣市 比對 全部地區內的縣市
                 // 獲取 - 該縣市的所有地區
                 for (int i = 0; i < areadata.size(); i++) {
-                    if (cityArray[position].equals(areadata.get(i).getCityName())){
+                    if (cityArray[position].equals(areadata.get(i).getCityName())) {
                         // 顯示該縣市的所有地區 -> spinnerArea
                         spinnerAreaAdapter = new SpinnerAdapter(baseActivity, areadata.get(i).getAreaList(), "地區選擇：");
                         spinnerArea.setAdapter(spinnerAreaAdapter);
@@ -125,8 +124,6 @@ public class ShowListFragment extends BaseFragment {
 
             }
         });
-
-
 
 
         spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
