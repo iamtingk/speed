@@ -80,12 +80,12 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
 
             //輸出到SharedPreference
             spHelper.editSP(AppConfig.JSON_SP_NAME, s);
-            Log.e("readSP", spHelper.readSP(AppConfig.JSON_SP_NAME, ""));
 
             DataHolder.getInstance().setData(AppConfig.DATA_KEY, getRecordData());
             goContainerPage(DrawerMenuActivity.class, ShowListFragment.class.getName(), null, true, PAGE_DEFAULT_ANIMATION);
-
         }
+
+
     }
 
 
@@ -103,7 +103,6 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
 
         //解析結束
         return list_items;
-
     }
 
 
@@ -125,8 +124,6 @@ public class LaunchActivity extends com.test.tingk.tingktest.activity.TBaseActiv
             }
         }, millis);
     }
-
-
 
 }
 

@@ -89,11 +89,11 @@ public class DrawerMenuActivity extends com.test.tingk.tingktest.activity.TDrawe
                 fragmentName = ShowMapFragment.class.getName();
                 break;
             }
-            case 2: {
-                // 顯示關於測速
-                fragmentName = AboutFragment.class.getName();
-                break;
-            }
+//            case 2: {
+//                // 顯示關於測速
+//                fragmentName = AboutFragment.class.getName();
+//                break;
+//            }
         }
 
         // 顯示頁面

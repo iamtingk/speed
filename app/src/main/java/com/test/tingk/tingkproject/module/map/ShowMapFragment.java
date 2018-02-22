@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
@@ -161,7 +162,7 @@ public class ShowMapFragment extends BaseFragment implements OnMapReadyCallback 
                     gMap.addMarker(new MarkerOptions().position(new LatLng(Double.valueOf(record_select_items.get(i).getLatitude()), Double.valueOf(record_select_items.get(i).getLongitude()))).title("測速：" + record_select_items.get(i).getLimit())).showInfoWindow();
                 }
                 if (!isEmpty(record_select_items)){
-                    gMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Double.valueOf(record_select_items.get(0).getLatitude()), Double.valueOf(record_select_items.get(0).getLongitude()))));
+                    gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.valueOf(record_select_items.get(0).getLatitude()), Double.valueOf(record_select_items.get(0).getLongitude())),14));
                 }else {
                     Toast.makeText(baseActivity, "無測速照相!", Toast.LENGTH_SHORT).show();
                 }

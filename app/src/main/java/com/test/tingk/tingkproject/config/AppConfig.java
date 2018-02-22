@@ -6,7 +6,7 @@ package com.test.tingk.tingkproject.config;
 
 public class AppConfig {
     // 來源：政府資料開放平台 -> https://data.gov.tw/dataset/7320
-    public static final String JSON_URL = "http://od.moi.gov.tw/api/v1/rest/datastore/A01010000C-000674-011";
+    public static final String JSON_URL = "https://od.moi.gov.tw/api/v1/rest/datastore/A01010000C-000674-011";
     public static final String JSON_FILE_NAME = "json_speed";
     public static final String JSON_SP_NAME = "json_speed";
     public static final String SP_DATA = "sp_data";
